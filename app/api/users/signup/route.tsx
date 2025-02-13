@@ -13,6 +13,7 @@ export async function POST(request: NextRequest) {
 
     //find user
     const user = await User.findOne({ email });
+    console.log("user:", user);
 
     if (user) {
       return NextResponse.json(
@@ -32,12 +33,14 @@ export async function POST(request: NextRequest) {
     });
 
     const saveUser = await newUser.save();
+    console.log("saveUser:", saveUser);
 
     return NextResponse.json(
       { message: "User created successfully", success: true, saveUser },
       { status: 201 }
     );
   } catch (error: any) {
-    return NextResponse.json({ error: error.message }, { status: 500 });
+    console.log("error:", error);
+    return NextResponse.json({ message: error.message }, { status: 500 });
   }
 }
