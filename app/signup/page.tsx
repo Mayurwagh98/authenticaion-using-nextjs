@@ -16,7 +16,7 @@ const Signup = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
+    <div className="min-h-screen flex items-center justify-center">
       <div className="max-w-md w-full space-y-8 p-8 bg-white rounded-lg shadow-md">
         <h2 className="text-3xl font-bold text-center text-gray-900">
           Sign up
@@ -34,7 +34,7 @@ const Signup = () => {
               name="username"
               type="text"
               required
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 text-black"
             />
           </div>
           <div>
@@ -49,7 +49,7 @@ const Signup = () => {
               name="email"
               type="email"
               required
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 text-black"
             />
           </div>
           <div>
@@ -64,7 +64,7 @@ const Signup = () => {
               name="password"
               type="password"
               required
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 text-black"
             />
           </div>
           <div>
@@ -76,6 +76,9 @@ const Signup = () => {
             </button>
           </div>
         </form>
+        <p className="text-black flex items-center justify-center text-sm">
+          <Link href={"/login"}>Visit to Login</Link>
+        </p>
       </div>
     </div>
   );
