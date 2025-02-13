@@ -1,13 +1,27 @@
 "use client";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { axios } from "axios";
+import { useState } from "react";
 
 const Signup = () => {
+  const [user, setUser] = useState({
+    username: "",
+    email: "",
+    password: "",
+  });
+
+  const onSignup = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
       <div className="max-w-md w-full space-y-8 p-8 bg-white rounded-lg shadow-md">
         <h2 className="text-3xl font-bold text-center text-gray-900">
           Sign up
         </h2>
-        <form className="mt-8 space-y-6">
+        <form className="mt-8 space-y-6" onSubmit={onSignup}>
           <div>
             <label
               htmlFor="username"
