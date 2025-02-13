@@ -32,14 +32,12 @@ export async function POST(request: NextRequest) {
     });
 
     const saveUser = await newUser.save();
-    console.log("saveUser:", saveUser);
 
     return NextResponse.json(
       { message: "User created successfully", success: true, saveUser },
       { status: 201 }
     );
   } catch (error: any) {
-    console.log("error:", error);
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }
