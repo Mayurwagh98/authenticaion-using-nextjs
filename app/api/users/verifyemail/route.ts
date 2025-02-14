@@ -4,10 +4,11 @@ import { NextRequest, NextResponse } from "next/server";
 
 connectToDb();
 
-export default async function POST(request: NextRequest) {
+export async function POST(request: NextRequest) {
   try {
     const reqBody = await request.json();
     const { token } = reqBody;
+    console.log('token:', token)
 
     const user = await User.findOne({
       verifyToken: token,
