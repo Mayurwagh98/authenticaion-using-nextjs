@@ -1,7 +1,8 @@
-const UserProfile = ({ params }: any) => {
+const UserProfile = async ({ params }: any) => {
+  const { id } = await params;
   return (
     <div>
-      <h2>User's Profile details {params.id}</h2>
+      <h2>User's Profile details {id}</h2>
     </div>
   );
 };
